@@ -1,12 +1,5 @@
-
-
-# class MainPage(browser):
-#     __init__(self, browser):
-#         self.browser = browser
-
-
 class MainPageLocators():
-    BTN_events_buy = find_by_css('.events__buy')
+    BTN_events_buy = '.events__buy'
 
 
 # class SectorPageLocators():
