@@ -1,5 +1,6 @@
 import pytest
 
+
 @pytest.fixture(scope='session')
 def splinter_webdriver():
     """Override splinter webdriver name."""
@@ -12,6 +13,6 @@ def splinter_window_size():
     return (1920, 1080)
 
 
-@pytest.fixture(scope='session')
-def hide_welcome_popup(browser):
-    browser.cookies.add({'accessHide': 'true'})
+# @pytest.fixture(scope='session')
+# def hide_welcome_popup(browser):
+#     browser.cookies.add({'accessHide': 'true'})
