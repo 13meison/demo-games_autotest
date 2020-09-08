@@ -1,11 +1,15 @@
-class MainPageLocators():
-    BTN_events_buy = '.events__buy'
+class MainPL():
+    BTN_EVENTS_BUY = '.events__buy'
 
 
-# class SectorPageLocators():
-#     SVG_empty_sector = browser.find_by_css('#svg > g[price]')
+class SectorPL():
+    SVG_SECTOR = '#svg > g[price]'
+    SVG_EMPTY_SECTOR = '#svg > g[price]'
+    SVG_PLACES = '#svg > g.active'
+    SVG_EMPTY_PLACE = '#svg > g.active'
+    TICKETS_CONTENT_BAR = '.tickets__content'
+    BTN_BASKET = '/ru/orders/cart'
 
 
-# class SeatPageLocators():
-#     SVG_empty_seat = browser.find_by_css('#svg > g.active')
-#     BTN_buy = browser.links.find_by_partial_href('/ru/orders/cart')
+class HeaderPL():
+    NUMBER_ITEMS_BASKET = '.header__link-count'
