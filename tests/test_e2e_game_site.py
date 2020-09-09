@@ -4,27 +4,35 @@ import time
 from .pages.main_page import MainPage
 from .pages.sector_page import SectorPage
 from .pages.header_page import HeaderPage
+from .pages.locators import MainPL
 
 
-def test_stadium(browser):
-    url = 'https://demo-games.infomatika.ru/'
-    browser.visit(url)
+def test_e2e_no_login(browser):
+    main_page = MainPage(browser)
+    sector_page = SectorPage(browser)
+    header_page = HeaderPage(browser)
 
-    page = MainPage(browser)
-    page.goto_event()
+    browser.visit(MainPL.MAIN_URL)
+    main_page.goto_event()
 
-    page_sector = SectorPage(browser)
-    assert page_sector.check_svg_sector(), "СВГ схема выбора сектора, не отображена"
-    page_sector.select_empty_sector()
+    sector_page.check_svg_sector()
+    sector_page.select_empty_sector()
+    sector_page.check_svg_places()
 
-    assert page_sector.check_svg_places(), "СВГ схема выбора мест, не отображена"
+    sector_page.select_empty_place()
+    sector_page.check_tickets_content_bar()
+    header_page.check_number_basket()
 
-    page_sector.select_empty_place()
-    assert page_sector.check_tickets_content_bar(
-    ), "Блок с выбранными билетами не появился"
+    sector_page.goto_basket()
 
-    page_header = HeaderPage(browser)
-    assert page_header.check_number_basket(
-    ), "Значок количества товаров у корзины, не появился"
 
-    page_sector.goto_basket()
+def test_login(browser):
+    main_page = MainPage(browser)
+    header_page = HeaderPage(browser)
+
+    browser.visit(MainPL.MAIN_URL)
+    header_page.goto_login()
+    header_page.input_form_login()
+    header_page.btn_enter_login()
+    time.sleep(10)
+    main_page.check_user_profile_dropdown()
