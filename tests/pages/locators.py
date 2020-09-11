@@ -1,8 +1,12 @@
 class MainPL():
-    # MAIN_URL = 'https://demo-games.infomatika.ru/'
-    MAIN_URL = 'https://demo-games.infomatika.ru/ru/'
+    MAIN_PAGE_URL = 'https://demo-games.infomatika.ru/ru/'
     BTN_EVENTS_BUY = '.events__buy'
     USER_PROFILE_DROPDOWN = '#dropdown__btn--1'
+
+
+class AbonementPL():
+    ABONEMENT_PAGE_URL = 'https://demo-games.infomatika.ru/ru/subscription/list'
+    BTN_ABONEMENT_BUY = '.events__buy'
 
 
 class SectorPL():
@@ -20,3 +24,4 @@ class HeaderPL():
     FORM_LOGIN_EMAIL = '#login-form-login'
     FORM_LOGIN_PASSWORD = '#login-form-password'
     BTN_FORM_LOGIN = '.auth_btn'
+    MENU_ABONEMENT = '/ru/subscription/list'
