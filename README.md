@@ -33,6 +33,8 @@ poetry run pytest tests --splinter-webdriver chrome --splinter-webdriver-executa
 poetry run pytest tests --splinter-webdriver chrome --splinter-webdriver-executable geckodriver.exe
 ```
 
+````
+
 ### Создание нового проекта
 
 - Установить `python` версии 3.4 или выше
@@ -41,7 +43,7 @@ poetry run pytest tests --splinter-webdriver chrome --splinter-webdriver-executa
   ```bash
   pip install --user poetry
   poetry config virtualenvs.in-project true
-  ```
+````
 
 - создаем проект `poetry new <название проекта>`
 - переходим в папку с проектом

@@ -17,3 +17,7 @@ class HeaderPage(BasePage):
 
     def btn_enter_login(self):
         self.browser.find_by_css(HeaderPL.BTN_FORM_LOGIN).click()
+
+    def goto_menu_abonement(self):
+        self.browser.links.find_by_partial_href(
+            HeaderPL.MENU_ABONEMENT).click()

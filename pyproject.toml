@@ -8,6 +8,7 @@ authors = ["Konstantin Mamaev <meison@meison.net>"]
 python = "^3.8"
 pytest-splinter = "^2.1.0"
 
+
 [tool.poetry.dev-dependencies]
 
 [build-system]
