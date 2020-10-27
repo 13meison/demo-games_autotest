@@ -25,3 +25,8 @@ class HeaderPL():
     FORM_LOGIN_PASSWORD = '#login-form-password'
     BTN_FORM_LOGIN = '.auth_btn'
     MENU_ABONEMENT = '/ru/subscription/list'
+
+class BasketPL():
+    BTN_ALL_CLEAR =  'div.lk__top > button#js-order-clear'
+    TEXT_CLEAR_BASKET = 'div.lk__small-title'
+    BTN_TICKETS_EVENT_DELETE = '.order__delete'
