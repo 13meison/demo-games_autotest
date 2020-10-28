@@ -6,6 +6,9 @@ class HeaderPage(BasePage):
     def check_number_basket(self):
         return self.browser.is_element_visible_by_css(HeaderPL.NUMBER_ITEMS_BASKET), "Значок количества товаров у корзины, не появился"
 
+    def goto_gamburger_login(self):
+        self.browser.find_by_css(HeaderPL.BTN_GAMBURGER).click()
+
     def goto_login(self):
         self.browser.find_by_css(HeaderPL.BTN_LOGIN).click()
 
