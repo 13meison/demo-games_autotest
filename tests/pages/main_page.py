@@ -11,3 +11,11 @@ class MainPage(BasePage):
     def check_user_profile_dropdown(self):
         assert self.browser.is_element_visible_by_css(
             MainPL.USER_PROFILE_DROPDOWN)
+'''        
+    def check_cockie_login(self):
+        cookies = self.browser.cookies.all()
+        coockie_login = 'session2'
+        assert coockie_login in cookies, 'no login'
+
+Пример работы с куки
+'''

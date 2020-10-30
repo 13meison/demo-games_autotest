@@ -24,3 +24,6 @@ class HeaderPage(BasePage):
     def goto_menu_abonement(self):
         self.browser.links.find_by_partial_href(
             HeaderPL.MENU_ABONEMENT).click()
+
+    def check_user_login(self):
+        assert self.browser.find_by_css(HeaderPL.ICON_LOGIN), 'Пользователь не зарегистрирован'
