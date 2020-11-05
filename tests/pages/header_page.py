@@ -1,5 +1,6 @@
 from .locators import HeaderPL
 from .base_page import BasePage
+import time
 
 
 class HeaderPage(BasePage):
@@ -13,6 +14,7 @@ class HeaderPage(BasePage):
         self.browser.find_by_css(HeaderPL.BTN_LOGIN).click()
 
     def input_form_login(self):
+        time.sleep(1)
         self.browser.find_by_css(HeaderPL.FORM_LOGIN_EMAIL).fill(
             'mamaev@infomatika.ru')
         self.browser.find_by_css(HeaderPL.FORM_LOGIN_PASSWORD).fill(

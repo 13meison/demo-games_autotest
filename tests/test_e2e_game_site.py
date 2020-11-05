@@ -28,7 +28,6 @@ class TestEventBuy():
         header_page.check_number_basket()
         sector_page.goto_basket()
         basket_page.check_page_load()
-        # time.sleep(2)
         basket_page.delete_all_tickets_event()
         basket_page.check_basket_clear()
 
@@ -50,7 +49,6 @@ class TestEventBuy():
         header_page.check_number_basket()
         sector_page.goto_basket()
         basket_page.check_page_load()
-        # time.sleep(2)
         basket_page.delete_all_order()
         basket_page.check_basket_clear()
 
@@ -79,7 +77,6 @@ class TestEventBuy():
         header_page.check_number_basket()
         sector_page.goto_basket()
         basket_page.check_page_load()
-        # time.sleep(2)
         basket_page.delete_all_order()
         basket_page.check_basket_clear()
 
@@ -91,17 +88,14 @@ class TestNabAbonementBuy():
         basket_page = BasketPage(browser)
         abonement_page = AbonementPage(browser)
 
+
         main_page.open_main_page_link()
         header_page.goto_gamburger_login()
         time.sleep(2)
-
         header_page.goto_login()
         header_page.input_form_login()
         header_page.btn_enter_login()
         time.sleep(2)
-        # cookies = browser.cookies.all()
-        # coockie_login = 'session2'
-        # assert coockie_login in cookies, 'no login'
         header_page.check_user_login()
 
         abonement_page.open_abonement_page_link()
@@ -112,11 +106,63 @@ class TestNabAbonementBuy():
         abonement_page.change_count_subscription_next()
         abonement_page.plus_subscription_count()
         abonement_page.change_count_subscription_continue()
+
+        abonement_page.check_count_subscription()
+
         abonement_page.check_btn_subscription_choose_seat()
         abonement_page.goto_btn_subscription_choose_seat()
+        time.sleep(2)
+        sector_page.zoom_minus()
+        sector_page.select_empty_sector()
+        sector_page.zoom_minus()
+        time.sleep(2)
+        sector_page.check_svg_places()
+        sector_page.select_empty_place()
+        time.sleep(2)
+        sector_page.select_empty_place()
+        sector_page.goto_btn_next_modal_windows()
+        abonement_page.goto_btn_subscription_buy()
+        basket_page.delete_all_order()
+        basket_page.check_basket_clear()
+
+class TestSplitAbonementBuy():
+    def test_split_abonement_buy(self, browser):
+        main_page = MainPage(browser)
+        sector_page = SectorPage(browser)
+        header_page = HeaderPage(browser)
+        basket_page = BasketPage(browser)
+        abonement_page = AbonementPage(browser)
+
+
+        main_page.open_main_page_link()
+        header_page.goto_gamburger_login()
+        time.sleep(2)
+        header_page.goto_login()
+        header_page.input_form_login()
+        header_page.btn_enter_login()
+        time.sleep(2)
+        header_page.check_user_login()
+
+        abonement_page.open_abonement_page_link()
+        time.sleep(2)
+        abonement_page.check_abonement_event()
+        abonement_page.goto_split_abonement_event()
+        time.sleep(2)
         sector_page.select_empty_sector()
         sector_page.select_empty_place()
+        sector_page.goto_btn_next_modal_windows()
+        sector_page.scroll_split_down_200()
+        time.sleep(2)
+        sector_page.scroll_split_down_200()
+        sector_page.zoom_minus()
+
+        sector_page.select_empty_sector()
+        sector_page.zoom_minus()
         sector_page.select_empty_place()
+        sector_page.goto_split_buy()
+        basket_page.delete_all_order()
+        basket_page.check_basket_clear()
+
 #Здесь остановился, тест не доделан
 # команда вызова теста
 # poetry run pytest --tb=line -v test_e2e_game_site.py::TestNabAbonementBuy

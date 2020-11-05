@@ -20,6 +20,6 @@ def splinter_headless():
 def hide_welcome_popup(browser):
     browser.cookies.add({'accessHide': 'true'})
 
-@pytest.fixture(scope='session')
-def splinter_wait_time():
-    return 10
+# @pytest.fixture(scope='session')
+# def splinter_wait_time():
+#     return 10

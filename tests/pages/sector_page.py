@@ -31,3 +31,24 @@ class SectorPage(BasePage):
 
     def goto_basket(self):
         self.browser.links.find_by_partial_href(SectorPL.BTN_BASKET).click()
+
+    def goto_btn_next_modal_windows(self):
+        self.browser.find_by_css(SectorPL.BTN_NEXT_MODAL_WINDOWS).click()
+
+    def scroll_nab_abonement_pop_up_down_200(self):
+        self.browser.execute_script("document.querySelector('#js-popup-modal').scrollTo(0, 200)")
+    def scroll_split_down_200(self):
+        self.browser.execute_script("document.querySelector('.container').scrollTo(0, 200)")
+
+    def zoom_minus(self):
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
+
+    def zoom_plus(self):
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_PLUS).click()
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_PLUS).click()
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_PLUS).click()
+
+    def goto_split_buy(self):
+        self.browser.find_by_css(SectorPL.BTN_SPLIT_BUY).click()
