@@ -31,7 +31,9 @@ class SectorPL():
     BTN_ZOOM_MINUS = '#js-plan-zoom-out'
     BTN_ZOOM_PLUS = '#js-plan-zoom-in'
     BTN_SPLIT_BUY = '.bottom__word_buy'
-
+    SVG_PLAN = '#svg'
+    SVG_SPLIT_FIRST_PLAN_EMPTY_SECTOR = '.places__twice-content[data-selenium="first-plan"] #svg > g[price]'
+    SVG_SPLIT_SECOND_PLAN_EMPTY_SECTOR = '.places__twice-content[data-selenium="second-plan"] #svg > g[price]:not(.inactive)'
 
 
 class HeaderPL():
@@ -43,10 +45,16 @@ class HeaderPL():
     MENU_ABONEMENT = '/ru/subscription/list'
     BTN_GAMBURGER = '#js-hamburger'
     ICON_LOGIN = '.header__link-text_login'
+    BTN_PRIORITY_PLACES = '/ru/verification'
 
 class BasketPL():
     BTN_ALL_CLEAR =  '#js-order-clear'
     TEXT_CLEAR_BASKET = 'div.lk__small-title'
     BTN_TICKETS_EVENT_DELETE = '.order__delete-text'
     ELEMENT_PAGE_LOAD = '.ready-for-test'
-
+class PriorityPL():
+    BTN_SELECT_PRIORITY_PLACES = '/ru/verification/seats'
+    CHECKBOX_ALL = '.purchase__top .checkbox__block'
+    CHECKBOX_PLACES_ONE = '#verification-seats-form tr:nth-child(1) .checkbox'
+    CHECKBOX_PLACES_TWO = '#verification-seats-form tr:nth-child(2) .checkbox'
+    BTN_BUY_PRIORITY = '.purchase__bottom .btn'

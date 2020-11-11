@@ -29,3 +29,5 @@ class HeaderPage(BasePage):
 
     def check_user_login(self):
         assert self.browser.find_by_css(HeaderPL.ICON_LOGIN), 'Пользователь не зарегистрирован'
+    def goto_priority_places(self):
+        self.browser.links.find_by_partial_href(HeaderPL.BTN_PRIORITY_PLACES).click()
