@@ -23,3 +23,6 @@ def hide_welcome_popup(browser):
 # @pytest.fixture(scope='session')
 # def splinter_wait_time():
 #     return 10
+# @pytest.fixture(scope='session')
+# def splinter_selenium_implicit_wait():
+#     return 10

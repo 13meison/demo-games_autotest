@@ -5,11 +5,19 @@ import random
 
 class SectorPage(BasePage):
     def select_empty_sector(self):
+        self.browser.execute_script(
+            'document.querySelector("' + SectorPL.SVG_PLAN + '").scrollIntoView({block: "center", inline: "nearest"})')
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
         empty_sector = self.browser.find_by_css(SectorPL.SVG_EMPTY_SECTOR)
         random_empty_sector = empty_sector[random.randrange(
             0, len(empty_sector) - 1, 1)]
         random_empty_sector.click()
+
     def select_empty_place(self):
+        self.browser.execute_script(
+            'document.querySelector("' + SectorPL.SVG_PLAN + '").scrollIntoView({block: "center", inline: "nearest"})')
         empty_places = self.browser.find_by_css(
             SectorPL.SVG_EMPTY_PLACE, wait_time=10)
         random_empty_place = empty_places[random.randrange(
@@ -53,12 +61,33 @@ class SectorPage(BasePage):
     def goto_split_buy(self):
         self.browser.find_by_css(SectorPL.BTN_SPLIT_BUY).click()
     def split_first_plan_select_empty_sector(self):
+        self.browser.execute_script(
+            'document.querySelector("' + SectorPL.SVG_PLAN + '").scrollIntoView({block: "center", inline: "nearest"})')
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
         empty_sector = self.browser.find_by_css(SectorPL.SVG_SPLIT_FIRST_PLAN_EMPTY_SECTOR)
         random_empty_sector = empty_sector[random.randrange(
             0, len(empty_sector) - 1, 1)]
         random_empty_sector.click()
     def split_second_plan_select_empty_sector(self):
+        self.browser.execute_script(
+            'document.querySelector("' + SectorPL.SVG_PLAN + '").scrollIntoView({block: "center", inline: "nearest"})')
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
+        self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
         empty_sector = self.browser.find_by_css(SectorPL.SVG_SPLIT_SECOND_PLAN_EMPTY_SECTOR)
         random_empty_sector = empty_sector[random.randrange(
             0, len(empty_sector) - 1, 1)]
         random_empty_sector.click()
+    def goto_split_next(self):
+        self.browser.find_by_css(SectorPL.BTN_SPLIT_NEXT).click()
+
+    def select_split_empty_place(self):
+        self.browser.execute_script(
+            'document.querySelector("' + SectorPL.SVG_PLAN + '").scrollIntoView({block: "center", inline: "nearest"})')
+        empty_places = self.browser.find_by_css(
+            SectorPL.SVG_SPLIT_EMPTY_PLACE, wait_time=10)
+        random_empty_place = empty_places[random.randrange(
+            0, len(empty_places) - 1, 1)]
+        random_empty_place.click()

@@ -27,6 +27,9 @@ class AbonementPage(BasePage):
         self.browser.execute_script('document.querySelector("'+ AbonementPL.BTN_SUBSCRIPTION_CHOOSE +'").scrollIntoView({block: "center", inline: "nearest"})')
 
     '''
+    def checkbox_select_all(self):
+        self.browser.find_by_css(AbonementPL.CHECK_BOX_ALL).click
+
     def goto_btn_subscription_choose_seat(self):
         self.browser.execute_script(
             'document.querySelector("' + AbonementPL.BTN_SUBSCRIPTION_CHOOSE + '").scrollIntoView({block: "center", inline: "nearest"})')

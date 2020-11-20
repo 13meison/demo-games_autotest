@@ -34,7 +34,9 @@ class SectorPL():
     SVG_PLAN = '#svg'
     SVG_SPLIT_FIRST_PLAN_EMPTY_SECTOR = '.places__twice-content[data-selenium="first-plan"] #svg > g[price]'
     SVG_SPLIT_SECOND_PLAN_EMPTY_SECTOR = '.places__twice-content[data-selenium="second-plan"] #svg > g[price]:not(.inactive)'
-
+    BTN_SPLIT_NEXT = '#js-order-button'
+    # SVG_SPLIT_SECOND_PLAN_EMPTY_SECTOR = '.places__twice-content[data-selenium="second-plan"] #svg > g[price]'
+    SVG_SPLIT_EMPTY_PLACE =  '#svg > g.active:not(.inactive)'
 
 class HeaderPL():
     NUMBER_ITEMS_BASKET = '.header__link-count'
