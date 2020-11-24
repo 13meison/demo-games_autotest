@@ -109,7 +109,6 @@ class TestNabAbonementBuy():
 
 
         abonement_page.check_count_subscription()
-        abonement_page.checkbox_select_all()
         abonement_page.check_btn_subscription_choose_seat()
         abonement_page.goto_btn_subscription_choose_seat()
         time.sleep(2)
@@ -121,9 +120,31 @@ class TestNabAbonementBuy():
         time.sleep(2)
         sector_page.select_empty_place()
         sector_page.goto_btn_next_modal_windows()
+        abonement_page.checkbox_select_all()
+        time.sleep(2)
+        abonement_page.check_not_visible_old_price()
+        abonement_page.check_price_nab_zero()
+        abonement_page.checkbox_select_all()
+
+        abonement_page.check_count_subscription()
+        abonement_page.check_btn_subscription_choose_seat()
+        abonement_page.goto_btn_subscription_choose_seat()
+        time.sleep(2)
+        sector_page.select_empty_sector()
+        sector_page.zoom_minus()
+        time.sleep(2)
+        sector_page.check_svg_places()
+        sector_page.select_empty_place()
+        time.sleep(2)
+        sector_page.select_empty_place()
+        sector_page.goto_btn_next_modal_windows()
+
         abonement_page.goto_btn_subscription_buy()
         basket_page.delete_all_order()
         basket_page.check_basket_clear()
+        '''Предустановка для успешного прохождения этого теста:
+        на странице самого мероприятия, должен быть включен чекбокс "Включить все" в аккаунте тестируемого пользователя 
+        '''
 
 class TestSplitAbonementBuy():
     def test_split_abonement_buy(self, browser):
@@ -229,7 +250,7 @@ class TestIntegration():
         abonement_page.change_count_subscription_continue()
 
         abonement_page.check_count_subscription()
-        abonement_page.checkbox_select_all()
+        # abonement_page.checkbox_select_all()
         abonement_page.check_btn_subscription_choose_seat()
         abonement_page.goto_btn_subscription_choose_seat()
         time.sleep(2)

@@ -17,8 +17,10 @@ class AbonementPL():
     SUBSCRIPTION_COUNT_BTN_CONTINUE = '#js-subscription-continue'
     BTN_SUBSCRIPTION_NEXT = '.btn_usual'
     TEXT_COUNT_SUBSCRIPTION = '#js-subscription-count > strong'
-    CHECK_BOX_ALL = '#js-checkbox-all'
+    CHECK_BOX_ALL = '.checkbox'
     BTN_SUBSCRIPTION_BUY = '#js-subscription-buy'
+    TEXT_OLD_PRICE = '#js-subscription-old-price'
+    TEXT_PRICE = '#js-subscription-score'
 
 class SectorPL():
     SVG_SECTOR = '#svg > g[price]'

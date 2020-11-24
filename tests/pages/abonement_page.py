@@ -19,6 +19,12 @@ class AbonementPage(BasePage):
     def check_btn_subscription_choose_seat(self):
         assert self.browser.is_element_visible_by_css(AbonementPL.BTN_SUBSCRIPTION_CHOOSE), 'Нет мероприятий в абонементе'
 
+    def check_not_visible_old_price(self):
+        assert self.browser.is_element_not_visible_by_css(AbonementPL.TEXT_OLD_PRICE), 'Старая цена не исчезла'
+    def check_price_nab_zero(self):
+        price = self.browser.find_by_css(AbonementPL.TEXT_PRICE).text
+        assert price == '0', 'цена не обнулилась'
+
     '''     Скролл элемента на верх страницы
     def test_test(self):
         self.browser.execute_script('document.querySelector("'+ AbonementPL.BTN_SUBSCRIPTION_CHOOSE +'").scrollIntoView(true)')
@@ -28,7 +34,7 @@ class AbonementPage(BasePage):
 
     '''
     def checkbox_select_all(self):
-        self.browser.find_by_css(AbonementPL.CHECK_BOX_ALL).click
+        self.browser.find_by_css(AbonementPL.CHECK_BOX_ALL).click()
 
     def goto_btn_subscription_choose_seat(self):
         self.browser.execute_script(
