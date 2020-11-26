@@ -1,5 +1,5 @@
-import pytest
 import time
+
 
 
 from .pages.main_page import MainPage
@@ -320,5 +320,4 @@ class TestIntegration():
 
 # команда вызова теста
 # poetry run pytest --tb=line -v test_e2e_game_site.py
-
 

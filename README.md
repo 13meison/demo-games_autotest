@@ -33,7 +33,7 @@ poetry run pytest tests --splinter-webdriver chrome --splinter-webdriver-executa
 poetry run pytest tests --splinter-webdriver chrome --splinter-webdriver-executable geckodriver.exe
 ```
 
-````
+
 
 ### Создание нового проекта
 
@@ -43,8 +43,19 @@ poetry run pytest tests --splinter-webdriver chrome --splinter-webdriver-executa
   ```bash
   pip install --user poetry
   poetry config virtualenvs.in-project true
-````
+    ```
 
 - создаем проект `poetry new <название проекта>`
 - переходим в папку с проектом
 - устанавливаем зависимости для тестов: `poetry install pytest-splinter`
+
+### Установка pytest-reporter для создания html отчетов
+    '''bash
+    poetry add pytest-reporter-html1
+    '''
+Для записи отчета использовать команду:
+
+    '''bash
+    poetry run pytest --template=html1/index.html --report=report.html name_test.py
+
+    '''

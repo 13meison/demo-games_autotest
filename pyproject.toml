@@ -2,11 +2,12 @@
 name = "simple_test"
 version = "0.1.0"
 description = ""
-authors = ["Konstantin Mamaev <meison@meison.net>"]
+authors = ["Nikita Mamaev <13meiosn@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 pytest-splinter = "^2.1.0"
+pytest-reporter-html1 = "^0.8.1"
 
 
 [tool.poetry.dev-dependencies]
