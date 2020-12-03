@@ -23,8 +23,16 @@ class AbonementPage(BasePage):
         assert self.browser.is_element_not_visible_by_css(AbonementPL.TEXT_OLD_PRICE), 'Старая цена не исчезла'
     def check_price_nab_zero(self):
         price = self.browser.find_by_css(AbonementPL.TEXT_PRICE).text
-        assert price == '0', 'цена не обнулилась'
+        assert price == '0', 'the price was not reset'
 
+    def check_subscription_selected_match_no_more_checked(self):
+        checked = self.browser.find_by_css(AbonementPL.TEXT_SUBSCRIPTION_CHECKED).text
+        selected = self.browser.find_by_css(AbonementPL.TEXT_SUBSCRIPTION_SELECTED).text
+        assert int(checked) >= int(selected), 'there are more selected matches than active ones'
+    def check_for_4_matches_10_percent_discount(self):
+        discount_price = self.browser.find_by_css(AbonementPL.TEXT_PRICE).text
+        old_price = self.browser.find_by_css(AbonementPL.TEXT_OLD_PRICE).text
+        assert int(old_price) * 0.1 == int(old_price) - int(discount_price), 'скидка не равна 10%'
     '''     Скролл элемента на верх страницы
     def test_test(self):
         self.browser.execute_script('document.querySelector("'+ AbonementPL.BTN_SUBSCRIPTION_CHOOSE +'").scrollIntoView(true)')

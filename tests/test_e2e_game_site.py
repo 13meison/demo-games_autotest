@@ -177,6 +177,7 @@ class TestSplitAbonementBuy():
         time.sleep(2)
         sector_page.goto_split_next()
         sector_page.split_second_plan_select_empty_sector()
+        time.sleep(5)
         sector_page.select_split_empty_place()
         # sector_page.goto_btn_next_modal_windows()
 

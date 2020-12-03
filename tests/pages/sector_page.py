@@ -76,10 +76,11 @@ class SectorPage(BasePage):
         self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
         self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
         self.browser.find_by_css(SectorPL.BTN_ZOOM_MINUS).click()
-        empty_sector = self.browser.find_by_css(SectorPL.SVG_SPLIT_SECOND_PLAN_EMPTY_SECTOR)
-        random_empty_sector = empty_sector[random.randrange(
-            0, len(empty_sector) - 1, 1)]
-        random_empty_sector.click()
+        self.browser.find_by_css(SectorPL.SVG_SPLIT_SECOND_PLAN_EMPTY_SECTOR).click()
+        # empty_sector = self.browser.find_by_css(SectorPL.SVG_SPLIT_SECOND_PLAN_EMPTY_SECTOR)
+        # random_empty_sector = empty_sector[random.randrange(
+        #     0, len(empty_sector) - 1, 1)]
+        # random_empty_sector.click()
     def goto_split_next(self):
         self.browser.find_by_css(SectorPL.BTN_SPLIT_NEXT).click()
 

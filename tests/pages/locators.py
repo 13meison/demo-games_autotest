@@ -21,6 +21,8 @@ class AbonementPL():
     BTN_SUBSCRIPTION_BUY = '#js-subscription-buy'
     TEXT_OLD_PRICE = '#js-subscription-old-price'
     TEXT_PRICE = '#js-subscription-score'
+    TEXT_SUBSCRIPTION_SELECTED = '.js-subscription-selected'
+    TEXT_SUBSCRIPTION_CHECKED = '.js-subscription-checked'
 
 class SectorPL():
     SVG_SECTOR = '#svg > g[price]'
