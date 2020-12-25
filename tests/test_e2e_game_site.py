@@ -1,3 +1,4 @@
+import pytest
 import time
 
 
@@ -9,7 +10,7 @@ from .pages.basket_page import BasketPage
 from .pages.abonement_page import AbonementPage
 from .pages.priority_places import PriorityPage
 
-
+@pytest.mark.event_buy
 class TestEventBuy():
     def test_no_login_buy_event_delete_event(self, browser):
         main_page = MainPage(browser)
@@ -82,6 +83,7 @@ class TestEventBuy():
         basket_page.delete_all_order()
         basket_page.check_basket_clear()
 
+@pytest.mark.nab_abonement
 class TestNabAbonementBuy():
     def test_nab_abonement_buy(self, browser):
         main_page = MainPage(browser)
@@ -146,6 +148,7 @@ class TestNabAbonementBuy():
         на странице самого мероприятия, должен быть включен чекбокс "Включить все" в аккаунте тестируемого пользователя 
         '''
 
+@pytest.mark.split_abonement
 class TestSplitAbonementBuy():
     def test_split_abonement_buy(self, browser):
         main_page = MainPage(browser)
@@ -191,6 +194,7 @@ class TestSplitAbonementBuy():
         basket_page.delete_all_order()
         basket_page.check_basket_clear()
 
+@pytest.mark.priority_places
 class TestPriorityPlaces():
     def test_priority_places(self, browser):
         main_page = MainPage(browser)
